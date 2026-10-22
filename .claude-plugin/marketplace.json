@@ -1,0 +1,15 @@
+{
+  "name": "digital-agency-design-system-dist",
+  "owner": {
+    "name": "Kishi-Satoshi"
+  },
+  "description": "デジタル庁デザインシステム（DADS）を土台に、Web 画面・HTML 文書を作る・審査する・直すためのプラグイン",
+  "plugins": [
+    {
+      "name": "digital-agency-design-system",
+      "displayName": "digital-agency-design-system",
+      "source": "./plugins/digital-agency-design-system",
+      "description": "digital-agency-design-system: DADS に沿って Web 画面・HTML 文書を作り、アクセシビリティ（JIS X 8341-3・WCAG 2.2 AA）と DADS への準拠を実際に表示して審査し、直すプラグイン"
+    }
+  ]
+}

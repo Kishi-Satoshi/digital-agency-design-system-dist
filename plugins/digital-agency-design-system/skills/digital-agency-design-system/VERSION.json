@@ -1,0 +1,33 @@
+{
+  "generated_at": "2026-10-22",
+  "repos": {
+    "design-system-example-components-html": {
+      "commit": "caa50d731cf515cfa5eae0093121f11ac5299235",
+      "date": "2026-10-21",
+      "tag": "v20261021"
+    },
+    "design-system-example-components-react": {
+      "commit": "e637c6820a8ceb5b1c28719e3260afdab89c2b57",
+      "date": "2026-10-21",
+      "tag": "v20261021"
+    },
+    "design-tokens": {
+      "commit": "a96c66793fef07af96b16f5e87f688a263b66df0",
+      "date": "2026-10-22",
+      "tag": "v2.1.0"
+    },
+    "tailwind-theme-plugin": {
+      "commit": "994c888f84fa5c29059b1b06288c999493e46721",
+      "date": "2026-10-22",
+      "tag": "v2.0.0"
+    }
+  },
+  "npm": {
+    "@digital-go-jp/tailwind-theme-plugin": "2.0.0",
+    "@digital-go-jp/design-tokens": "2.1.0"
+  },
+  "counts": {
+    "html_components": 42,
+    "react_components": 44
+  }
+}

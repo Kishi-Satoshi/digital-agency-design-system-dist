@@ -1,0 +1,9 @@
+{
+  "name": "digital-agency-design-system",
+  "displayName": "digital-agency-design-system",
+  "version": "0.1.0",
+  "description": "デジタル庁デザインシステム（DADS）を土台に、Web 画面・HTML 文書を作る・審査する・直すプラグイン（作る・審査・直すの3エージェント付き）。DADS の公式配布物ではありません",
+  "author": {
+    "name": "Kishi-Satoshi"
+  }
+}

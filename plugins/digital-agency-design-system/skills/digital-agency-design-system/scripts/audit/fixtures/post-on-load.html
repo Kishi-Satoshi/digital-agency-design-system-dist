@@ -1,0 +1,6 @@
+<!doctype html>
+<!-- 読み取り専用の確認用：読み込み時に POST を送ろうとする。道具はこれを止めなければならない -->
+<html lang="ja"><head><meta charset="utf-8"><title>POST を送るページ（確認用）</title></head>
+<body><h1>POST の確認</h1>
+<script>fetch("https://example.invalid/track", { method: "POST", body: "x" }).catch(() => {});</script>
+</body></html>

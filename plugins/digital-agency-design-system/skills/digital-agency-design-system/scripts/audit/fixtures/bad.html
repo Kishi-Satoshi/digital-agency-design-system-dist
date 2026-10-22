@@ -1,0 +1,29 @@
+<!doctype html>
+<!-- 審査の道具の確認用。わざと問題を入れてある（lang なし、低コントラスト、ラベルなし、alt なし、はみ出し、フォーカス表示消し、トークン外の色、px 指定、送信フォーム） -->
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>問題のあるページ（確認用）</title>
+<style>
+  body { font-family: Arial, sans-serif; font-size: 14px; color: #333; }
+  .faint { color: #bbbbbb; }
+  .wide { width: 900px; background: #ff00aa; }
+  button:focus, a:focus { outline: none; }
+  .cut { width: 300px; height: 40px; overflow: hidden; white-space: nowrap; font-size: 1rem; }
+</style>
+</head>
+<body>
+  <h1>申請フォーム</h1>
+  <h4>見出しが飛んでいる</h4>
+  <p class="faint">薄くて読みにくい説明文です。</p>
+  <img src="data:image/gif;base64,R0lGODlhAQABAAAAACw=" width="40" height="40">
+  <div class="wide">画面幅からはみ出す箱</div>
+  <form action="https://example.invalid/submit" method="post">
+    <input type="text" name="name">
+    <button type="submit">送信</button>
+  </form>
+  <a href="#">こちら</a>
+  <p class="cut">文字を大きくすると切れる説明です</p>
+</body>
+</html>

@@ -1,0 +1,1597 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>digital-agency-design-system の使い方</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Noto+Sans+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+/* DADS global.css */
+:root {
+  --color-primitive-blue-50: #e8f1fe;
+  --color-primitive-blue-100: #d9e6ff;
+  --color-primitive-blue-200: #c5d7fb;
+  --color-primitive-blue-300: #9db7f9;
+  --color-primitive-blue-400: #7096f8;
+  --color-primitive-blue-500: #4979f5;
+  --color-primitive-blue-600: #3460fb;
+  --color-primitive-blue-700: #264af4;
+  --color-primitive-blue-800: #0031d8;
+  --color-primitive-blue-900: #0017c1;
+  --color-primitive-blue-1000: #00118f;
+  --color-primitive-blue-1100: #000071;
+  --color-primitive-blue-1200: #000060;
+  --color-primitive-light-blue-50: #f0f9ff;
+  --color-primitive-light-blue-100: #dcf0ff;
+  --color-primitive-light-blue-200: #c0e4ff;
+  --color-primitive-light-blue-300: #97d3ff;
+  --color-primitive-light-blue-400: #57b8ff;
+  --color-primitive-light-blue-500: #39abff;
+  --color-primitive-light-blue-600: #008bf2;
+  --color-primitive-light-blue-700: #0877d7;
+  --color-primitive-light-blue-800: #0066be;
+  --color-primitive-light-blue-900: #0055ad;
+  --color-primitive-light-blue-1000: #00428c;
+  --color-primitive-light-blue-1100: #00316a;
+  --color-primitive-light-blue-1200: #00234b;
+  --color-primitive-cyan-50: #e9f7f9;
+  --color-primitive-cyan-100: #c8f8ff;
+  --color-primitive-cyan-200: #99f2ff;
+  --color-primitive-cyan-300: #79e2f2;
+  --color-primitive-cyan-400: #2bc8e4;
+  --color-primitive-cyan-500: #01b7d6;
+  --color-primitive-cyan-600: #00a3bf;
+  --color-primitive-cyan-700: #008da6;
+  --color-primitive-cyan-800: #008299;
+  --color-primitive-cyan-900: #006f83;
+  --color-primitive-cyan-1000: #006173;
+  --color-primitive-cyan-1100: #004c59;
+  --color-primitive-cyan-1200: #003741;
+  --color-primitive-green-50: #e6f5ec;
+  --color-primitive-green-100: #c2e5d1;
+  --color-primitive-green-200: #9bd4b5;
+  --color-primitive-green-300: #71c598;
+  --color-primitive-green-400: #51b883;
+  --color-primitive-green-500: #2cac6e;
+  --color-primitive-green-600: #259d63;
+  --color-primitive-green-700: #1d8b56;
+  --color-primitive-green-800: #197a4b;
+  --color-primitive-green-900: #115a36;
+  --color-primitive-green-1000: #0c472a;
+  --color-primitive-green-1100: #08351f;
+  --color-primitive-green-1200: #032213;
+  --color-primitive-lime-50: #ebfad9;
+  --color-primitive-lime-100: #d0f5a2;
+  --color-primitive-lime-200: #c0f354;
+  --color-primitive-lime-300: #ade830;
+  --color-primitive-lime-400: #9ddd15;
+  --color-primitive-lime-500: #8cc80c;
+  --color-primitive-lime-600: #7eb40d;
+  --color-primitive-lime-700: #6fa104;
+  --color-primitive-lime-800: #618e00;
+  --color-primitive-lime-900: #507500;
+  --color-primitive-lime-1000: #3e5a00;
+  --color-primitive-lime-1100: #2c4100;
+  --color-primitive-lime-1200: #1e2d00;
+  --color-primitive-yellow-50: #fbf5e0;
+  --color-primitive-yellow-100: #fff0b3;
+  --color-primitive-yellow-200: #ffe380;
+  --color-primitive-yellow-300: #ffd43d;
+  --color-primitive-yellow-400: #ffc700;
+  --color-primitive-yellow-500: #ebb700;
+  --color-primitive-yellow-600: #d2a400;
+  --color-primitive-yellow-700: #b78f00;
+  --color-primitive-yellow-800: #a58000;
+  --color-primitive-yellow-900: #927200;
+  --color-primitive-yellow-1000: #806300;
+  --color-primitive-yellow-1100: #6e5600;
+  --color-primitive-yellow-1200: #604b00;
+  --color-primitive-orange-50: #ffeee2;
+  --color-primitive-orange-100: #ffdfca;
+  --color-primitive-orange-200: #ffc199;
+  --color-primitive-orange-300: #ffa66d;
+  --color-primitive-orange-400: #ff8d44;
+  --color-primitive-orange-500: #ff7628;
+  --color-primitive-orange-600: #fb5b01;
+  --color-primitive-orange-700: #e25100;
+  --color-primitive-orange-800: #c74700;
+  --color-primitive-orange-900: #ac3e00;
+  --color-primitive-orange-1000: #8b3200;
+  --color-primitive-orange-1100: #6d2700;
+  --color-primitive-orange-1200: #541e00;
+  --color-primitive-red-50: #fdeeee;
+  --color-primitive-red-100: #ffdada;
+  --color-primitive-red-200: #ffbbbb;
+  --color-primitive-red-300: #ff9696;
+  --color-primitive-red-400: #ff7171;
+  --color-primitive-red-500: #ff5454;
+  --color-primitive-red-600: #fe3939;
+  --color-primitive-red-700: #fa0000;
+  --color-primitive-red-800: #ec0000;
+  --color-primitive-red-900: #ce0000;
+  --color-primitive-red-1000: #a90000;
+  --color-primitive-red-1100: #850000;
+  --color-primitive-red-1200: #620000;
+  --color-primitive-magenta-50: #f3e5f4;
+  --color-primitive-magenta-100: #ffd0ff;
+  --color-primitive-magenta-200: #ffaeff;
+  --color-primitive-magenta-300: #ff8eff;
+  --color-primitive-magenta-400: #f661f6;
+  --color-primitive-magenta-500: #f137f1;
+  --color-primitive-magenta-600: #db00db;
+  --color-primitive-magenta-700: #c000c0;
+  --color-primitive-magenta-800: #aa00aa;
+  --color-primitive-magenta-900: #8b008b;
+  --color-primitive-magenta-1000: #6c006c;
+  --color-primitive-magenta-1100: #500050;
+  --color-primitive-magenta-1200: #3b003b;
+  --color-primitive-purple-50: #f1eafa;
+  --color-primitive-purple-100: #ecddff;
+  --color-primitive-purple-200: #ddc2ff;
+  --color-primitive-purple-300: #cda6ff;
+  --color-primitive-purple-400: #bb87ff;
+  --color-primitive-purple-500: #a565f8;
+  --color-primitive-purple-600: #8843e1;
+  --color-primitive-purple-700: #6f23d0;
+  --color-primitive-purple-800: #5c10be;
+  --color-primitive-purple-900: #5109ad;
+  --color-primitive-purple-1000: #41048e;
+  --color-primitive-purple-1100: #30016c;
+  --color-primitive-purple-1200: #21004b;
+  --color-neutral-white: #ffffff;
+  --color-neutral-black: #000000;
+  --color-neutral-solid-gray-50: #f2f2f2;
+  --color-neutral-solid-gray-100: #e6e6e6;
+  --color-neutral-solid-gray-200: #cccccc;
+  --color-neutral-solid-gray-300: #b3b3b3;
+  --color-neutral-solid-gray-400: #999999;
+  --color-neutral-solid-gray-420: #949494;
+  --color-neutral-solid-gray-500: #7f7f7f;
+  --color-neutral-solid-gray-536: #767676;
+  --color-neutral-solid-gray-600: #666666;
+  --color-neutral-solid-gray-700: #4d4d4d;
+  --color-neutral-solid-gray-800: #333333;
+  --color-neutral-solid-gray-900: #1a1a1a;
+  --color-neutral-opacity-gray-50: rgba(0, 0, 0, 0.05);
+  --color-neutral-opacity-gray-100: rgba(0, 0, 0, 0.1);
+  --color-neutral-opacity-gray-200: rgba(0, 0, 0, 0.2);
+  --color-neutral-opacity-gray-300: rgba(0, 0, 0, 0.3);
+  --color-neutral-opacity-gray-400: rgba(0, 0, 0, 0.4);
+  --color-neutral-opacity-gray-420: rgba(0, 0, 0, 0.42);
+  --color-neutral-opacity-gray-500: rgba(0, 0, 0, 0.5);
+  --color-neutral-opacity-gray-536: rgba(0, 0, 0, 0.54);
+  --color-neutral-opacity-gray-600: rgba(0, 0, 0, 0.6);
+  --color-neutral-opacity-gray-700: rgba(0, 0, 0, 0.7);
+  --color-neutral-opacity-gray-800: rgba(0, 0, 0, 0.8);
+  --color-neutral-opacity-gray-900: rgba(0, 0, 0, 0.9);
+  --font-family-sans:
+    "Noto Sans JP", -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-family-mono: "Noto Sans Mono", monospace;
+  --elevation-1:
+    0 2px 8px 1px rgba(0, 0, 0, 0.1), 0 1px 5px 0 rgba(0, 0, 0, 0.3);
+  --elevation-2:
+    0 2px 12px 2px rgba(0, 0, 0, 0.1), 0 1px 6px 0 rgba(0, 0, 0, 0.3);
+  --elevation-3:
+    0 4px 16px 3px rgba(0, 0, 0, 0.1), 0 1px 6px 0 rgba(0, 0, 0, 0.3);
+  --elevation-4:
+    0 6px 20px 4px rgba(0, 0, 0, 0.1), 0 2px 6px 0 rgba(0, 0, 0, 0.3);
+  --elevation-5:
+    0 8px 24px 5px rgba(0, 0, 0, 0.1), 0 2px 10px 0 rgba(0, 0, 0, 0.3);
+  --elevation-6:
+    0 10px 30px 6px rgba(0, 0, 0, 0.1), 0 3px 12px 0 rgba(0, 0, 0, 0.3);
+  --elevation-7:
+    0 12px 36px 7px rgba(0, 0, 0, 0.1), 0 3px 14px 0 rgba(0, 0, 0, 0.3);
+  --elevation-8:
+    0 14px 40px 7px rgba(0, 0, 0, 0.1), 0 3px 16px 0 rgba(0, 0, 0, 0.3);
+  --color-semantic-success-1: var(--color-primitive-green-600);
+  --color-semantic-success-2: var(--color-primitive-green-800);
+  --color-semantic-error-1: var(--color-primitive-red-800);
+  --color-semantic-error-2: var(--color-primitive-red-900);
+  --color-semantic-warning-yellow-1: var(--color-primitive-yellow-700);
+  --color-semantic-warning-yellow-2: var(--color-primitive-yellow-900);
+  --color-semantic-warning-orange-1: var(--color-primitive-orange-600);
+  --color-semantic-warning-orange-2: var(--color-primitive-orange-800);
+  --color-key-50: var(--color-primitive-blue-50);
+  --color-key-100: var(--color-primitive-blue-100);
+  --color-key-200: var(--color-primitive-blue-200);
+  --color-key-300: var(--color-primitive-blue-300);
+  --color-key-400: var(--color-primitive-blue-400);
+  --color-key-500: var(--color-primitive-blue-500);
+  --color-key-600: var(--color-primitive-blue-600);
+  --color-key-700: var(--color-primitive-blue-700);
+  --color-key-800: var(--color-primitive-blue-800);
+  --color-key-900: var(--color-primitive-blue-900);
+  --color-key-1000: var(--color-primitive-blue-1000);
+  --color-key-1100: var(--color-primitive-blue-1100);
+  --color-key-1200: var(--color-primitive-blue-1200);
+}
+
+html {
+  scrollbar-gutter: stable;
+  font-family: var(--font-family-sans);
+}
+
+html:has(:modal) {
+  overflow: clip;
+  scrollbar-gutter: auto;
+}
+
+body:has(:modal) {
+  overflow: auto;
+  scrollbar-gutter: stable;
+}
+
+:where(a):any-link {
+  color: var(--color-primitive-blue-1000);
+  text-decoration: underline;
+  text-decoration-thickness: calc(1 / 16 * 1rem);
+  text-underline-offset: calc(3 / 16 * 1rem);
+}
+
+:where(a):visited {
+  color: var(--color-primitive-magenta-900);
+}
+
+@media (hover: hover) {
+  :where(a):hover {
+    color: var(--color-primitive-blue-900);
+    text-decoration-thickness: calc(3 / 16 * 1rem);
+  }
+}
+
+:where(a):active {
+  color: var(--color-primitive-orange-800);
+  text-decoration-thickness: calc(1 / 16 * 1rem);
+}
+
+:focus-visible {
+  outline: calc(4 / 16 * 1rem) solid var(--color-neutral-black);
+  outline-offset: calc(2 / 16 * 1rem);
+  border-radius: calc(4 / 16 * 1rem);
+  box-shadow: 0 0 0 calc(2 / 16 * 1rem) var(--color-primitive-yellow-300);
+}
+
+.dads-u-visually-hidden {
+  clip: rect(0 0 0 0) !important;
+  clip-path: inset(50%) !important;
+  height: 1px !important;
+  overflow: hidden !important;
+  position: absolute !important;
+  white-space: nowrap !important;
+  width: 1px !important;
+}
+
+:where(.dads-u-focus-outline):focus-visible {
+  outline: calc(4 / 16 * 1rem) solid var(--color-neutral-black) !important;
+  outline-offset: calc(2 / 16 * 1rem) !important;
+  border-radius: calc(4 / 16 * 1rem) !important;
+  background-color: var(--color-primitive-yellow-300) !important;
+  box-shadow: 0 0 0 calc(2 / 16 * 1rem) var(--color-primitive-yellow-300) !important;
+}
+
+@supports selector(:has(*)) {
+  :where(.dads-u-focus-within-outline):focus-visible,
+  :where(.dads-u-focus-within-outline):has(:focus-visible) {
+    outline: calc(4 / 16 * 1rem) solid var(--color-neutral-black) !important;
+    outline-offset: calc(2 / 16 * 1rem) !important;
+    border-radius: calc(4 / 16 * 1rem) !important;
+    background-color: var(--color-primitive-yellow-300) !important;
+    box-shadow: 0 0 0 calc(2 / 16 * 1rem) var(--color-primitive-yellow-300) !important;
+  }
+}
+@supports not selector(:has(*)) {
+  :where(.dads-u-focus-within-outline):focus-within {
+    outline: calc(4 / 16 * 1rem) solid var(--color-neutral-black) !important;
+    outline-offset: calc(2 / 16 * 1rem) !important;
+    border-radius: calc(4 / 16 * 1rem) !important;
+    background-color: var(--color-primitive-yellow-300) !important;
+    box-shadow: 0 0 0 calc(2 / 16 * 1rem) var(--color-primitive-yellow-300) !important;
+  }
+}
+
+.dads-u-dsp-64B-140 {
+  font-weight: bold !important;
+  font-size: calc(64 / 16 * 1rem) !important;
+  line-height: 1.4 !important;
+  letter-spacing: 0 !important;
+}
+
+.dads-u-dsp-57B-140 {
+  font-weight: bold !important;
+  font-size: calc(57 / 16 * 1rem) !important;
+  line-height: 1.4 !important;
+  letter-spacing: 0 !important;
+}
+
+.dads-u-dsp-48B-140 {
+  font-weight: bold !important;
+  font-size: calc(48 / 16 * 1rem) !important;
+  line-height: 1.4 !important;
+  letter-spacing: 0 !important;
+}
+
+.dads-u-dsp-64N-140 {
+  font-weight: normal !important;
+  font-size: calc(64 / 16 * 1rem) !important;
+  line-height: 1.4 !important;
+  letter-spacing: 0 !important;
+}
+
+.dads-u-dsp-57N-140 {
+  font-weight: normal !important;
+  font-size: calc(57 / 16 * 1rem) !important;
+  line-height: 1.4 !important;
+  letter-spacing: 0 !important;
+}
+
+.dads-u-dsp-48N-140 {
+  font-weight: normal !important;
+  font-size: calc(48 / 16 * 1rem) !important;
+  line-height: 1.4 !important;
+  letter-spacing: 0 !important;
+}
+
+.dads-u-std-45B-140 {
+  font-weight: bold !important;
+  font-size: calc(45 / 16 * 1rem) !important;
+  line-height: 1.4 !important;
+  letter-spacing: 0 !important;
+}
+
+.dads-u-std-36B-140 {
+  font-weight: bold !important;
+  font-size: calc(36 / 16 * 1rem) !important;
+  line-height: 1.4 !important;
+  letter-spacing: 0.01em !important;
+}
+
+.dads-u-std-32B-150 {
+  font-weight: bold !important;
+  font-size: calc(32 / 16 * 1rem) !important;
+  line-height: 1.5 !important;
+  letter-spacing: 0.01em !important;
+}
+
+.dads-u-std-28B-150 {
+  font-weight: bold !important;
+  font-size: calc(28 / 16 * 1rem) !important;
+  line-height: 1.5 !important;
+  letter-spacing: 0.01em !important;
+}
+
+.dads-u-std-26B-150 {
+  font-weight: bold !important;
+  font-size: calc(26 / 16 * 1rem) !important;
+  line-height: 1.5 !important;
+  letter-spacing: 0.02em !important;
+}
+
+.dads-u-std-24B-150 {
+  font-weight: bold !important;
+  font-size: calc(24 / 16 * 1rem) !important;
+  line-height: 1.5 !important;
+  letter-spacing: 0.02em !important;
+}
+
+.dads-u-std-22B-150 {
+  font-weight: bold !important;
+  font-size: calc(22 / 16 * 1rem) !important;
+  line-height: 1.5 !important;
+  letter-spacing: 0.02em !important;
+}
+
+.dads-u-std-20B-150 {
+  font-weight: bold !important;
+  font-size: calc(20 / 16 * 1rem) !important;
+  line-height: 1.5 !important;
+  letter-spacing: 0.02em !important;
+}
+
+.dads-u-std-18B-160 {
+  font-weight: bold !important;
+  font-size: calc(18 / 16 * 1rem) !important;
+  line-height: 1.6 !important;
+  letter-spacing: 0.02em !important;
+}
+
+.dads-u-std-17B-170 {
+  font-weight: bold !important;
+  font-size: calc(17 / 16 * 1rem) !important;
+  line-height: 1.7 !important;
+  letter-spacing: 0.02em !important;
+}
+
+.dads-u-std-16B-170 {
+  font-weight: bold !important;
+  font-size: calc(16 / 16 * 1rem) !important;
+  line-height: 1.7 !important;
+  letter-spacing: 0.02em !important;
+}
+
+.dads-u-std-16B-175 {
+  font-weight: bold !important;
+  font-size: calc(16 / 16 * 1rem) !important;
+  line-height: 1.75 !important;
+  letter-spacing: 0.02em !important;
+}
+
+.dads-u-std-45N-140 {
+  font-weight: normal !important;
+  font-size: calc(45 / 16 * 1rem) !important;
+  line-height: 1.4 !important;
+  letter-spacing: 0 !important;
+}
+
+.dads-u-std-36N-140 {
+  font-weight: normal !important;
+  font-size: calc(36 / 16 * 1rem) !important;
+  line-height: 1.4 !important;
+  letter-spacing: 0.01em !important;
+}
+
+.dads-u-std-32N-150 {
+  font-weight: normal !important;
+  font-size: calc(32 / 16 * 1rem) !important;
+  line-height: 1.5 !important;
+  letter-spacing: 0.01em !important;
+}
+
+.dads-u-std-28N-150 {
+  font-weight: normal !important;
+  font-size: calc(28 / 16 * 1rem) !important;
+  line-height: 1.5 !important;
+  letter-spacing: 0.01em !important;
+}
+
+.dads-u-std-26N-150 {
+  font-weight: normal !important;
+  font-size: calc(26 / 16 * 1rem) !important;
+  line-height: 1.5 !important;
+  letter-spacing: 0.02em !important;
+}
+
+.dads-u-std-24N-150 {
+  font-weight: normal !important;
+  font-size: calc(24 / 16 * 1rem) !important;
+  line-height: 1.5 !important;
+  letter-spacing: 0.02em !important;
+}
+
+.dads-u-std-22N-150 {
+  font-weight: normal !important;
+  font-size: calc(22 / 16 * 1rem) !important;
+  line-height: 1.5 !important;
+  letter-spacing: 0.02em !important;
+}
+
+.dads-u-std-20N-150 {
+  font-weight: normal !important;
+  font-size: calc(20 / 16 * 1rem) !important;
+  line-height: 1.5 !important;
+  letter-spacing: 0.02em !important;
+}
+
+.dads-u-std-18N-160 {
+  font-weight: normal !important;
+  font-size: calc(18 / 16 * 1rem) !important;
+  line-height: 1.6 !important;
+  letter-spacing: 0.02em !important;
+}
+
+.dads-u-std-17N-170 {
+  font-weight: normal !important;
+  font-size: calc(17 / 16 * 1rem) !important;
+  line-height: 1.7 !important;
+  letter-spacing: 0.02em !important;
+}
+
+.dads-u-std-16N-170 {
+  font-weight: normal !important;
+  font-size: calc(16 / 16 * 1rem) !important;
+  line-height: 1.7 !important;
+  letter-spacing: 0.02em !important;
+}
+
+.dads-u-std-16N-175 {
+  font-weight: normal !important;
+  font-size: calc(16 / 16 * 1rem) !important;
+  line-height: 1.75 !important;
+  letter-spacing: 0.02em !important;
+}
+
+.dads-u-dns-17B-130 {
+  font-weight: bold !important;
+  font-size: calc(17 / 16 * 1rem) !important;
+  line-height: 1.3 !important;
+  letter-spacing: 0 !important;
+}
+
+.dads-u-dns-17B-120 {
+  font-weight: bold !important;
+  font-size: calc(17 / 16 * 1rem) !important;
+  line-height: 1.2 !important;
+  letter-spacing: 0 !important;
+}
+
+.dads-u-dns-16B-130 {
+  font-weight: bold !important;
+  font-size: calc(16 / 16 * 1rem) !important;
+  line-height: 1.3 !important;
+  letter-spacing: 0 !important;
+}
+
+.dads-u-dns-16B-120 {
+  font-weight: bold !important;
+  font-size: calc(16 / 16 * 1rem) !important;
+  line-height: 1.2 !important;
+  letter-spacing: 0 !important;
+}
+
+.dads-u-dns-14B-130 {
+  font-weight: bold !important;
+  font-size: calc(14 / 16 * 1rem) !important;
+  line-height: 1.3 !important;
+  letter-spacing: 0 !important;
+}
+
+.dads-u-dns-14B-120 {
+  font-weight: bold !important;
+  font-size: calc(14 / 16 * 1rem) !important;
+  line-height: 1.2 !important;
+  letter-spacing: 0 !important;
+}
+
+.dads-u-dns-17N-130 {
+  font-weight: normal !important;
+  font-size: calc(17 / 16 * 1rem) !important;
+  line-height: 1.3 !important;
+  letter-spacing: 0 !important;
+}
+
+.dads-u-dns-17N-120 {
+  font-weight: normal !important;
+  font-size: calc(17 / 16 * 1rem) !important;
+  line-height: 1.2 !important;
+  letter-spacing: 0 !important;
+}
+
+.dads-u-dns-16N-130 {
+  font-weight: normal !important;
+  font-size: calc(16 / 16 * 1rem) !important;
+  line-height: 1.3 !important;
+  letter-spacing: 0 !important;
+}
+
+.dads-u-dns-16N-120 {
+  font-weight: normal !important;
+  font-size: calc(16 / 16 * 1rem) !important;
+  line-height: 1.2 !important;
+  letter-spacing: 0 !important;
+}
+
+.dads-u-dns-14N-130 {
+  font-weight: normal !important;
+  font-size: calc(14 / 16 * 1rem) !important;
+  line-height: 1.3 !important;
+  letter-spacing: 0 !important;
+}
+
+.dads-u-dns-14N-120 {
+  font-weight: normal !important;
+  font-size: calc(14 / 16 * 1rem) !important;
+  line-height: 1.2 !important;
+  letter-spacing: 0 !important;
+}
+
+.dads-u-oln-17B-100 {
+  font-weight: bold !important;
+  font-size: calc(17 / 16 * 1rem) !important;
+  line-height: 1 !important;
+  letter-spacing: 0.02em !important;
+}
+
+.dads-u-oln-16B-100 {
+  font-weight: bold !important;
+  font-size: calc(16 / 16 * 1rem) !important;
+  line-height: 1 !important;
+  letter-spacing: 0.02em !important;
+}
+
+.dads-u-oln-14B-100 {
+  font-weight: bold !important;
+  font-size: calc(14 / 16 * 1rem) !important;
+  line-height: 1 !important;
+  letter-spacing: 0.02em !important;
+}
+
+.dads-u-oln-17N-100 {
+  font-weight: normal !important;
+  font-size: calc(17 / 16 * 1rem) !important;
+  line-height: 1 !important;
+  letter-spacing: 0.02em !important;
+}
+
+.dads-u-oln-16N-100 {
+  font-weight: normal !important;
+  font-size: calc(16 / 16 * 1rem) !important;
+  line-height: 1 !important;
+  letter-spacing: 0.02em !important;
+}
+
+.dads-u-oln-14N-100 {
+  font-weight: normal !important;
+  font-size: calc(14 / 16 * 1rem) !important;
+  line-height: 1 !important;
+  letter-spacing: 0.02em !important;
+}
+
+.dads-u-mono-17B-150 {
+  font-weight: bold !important;
+  font-size: calc(17 / 16 * 1rem) !important;
+  line-height: 1.5 !important;
+  font-family: var(--font-family-mono) !important;
+  letter-spacing: 0 !important;
+}
+
+.dads-u-mono-16B-150 {
+  font-weight: bold !important;
+  font-size: calc(16 / 16 * 1rem) !important;
+  line-height: 1.5 !important;
+  font-family: var(--font-family-mono) !important;
+  letter-spacing: 0 !important;
+}
+
+.dads-u-mono-14B-150 {
+  font-weight: bold !important;
+  font-size: calc(14 / 16 * 1rem) !important;
+  line-height: 1.5 !important;
+  font-family: var(--font-family-mono) !important;
+  letter-spacing: 0 !important;
+}
+
+.dads-u-mono-17N-150 {
+  font-weight: normal !important;
+  font-size: calc(17 / 16 * 1rem) !important;
+  line-height: 1.5 !important;
+  font-family: var(--font-family-mono) !important;
+  letter-spacing: 0 !important;
+}
+
+.dads-u-mono-16N-150 {
+  font-weight: normal !important;
+  font-size: calc(16 / 16 * 1rem) !important;
+  line-height: 1.5 !important;
+  font-family: var(--font-family-mono) !important;
+  letter-spacing: 0 !important;
+}
+
+.dads-u-mono-14N-150 {
+  font-weight: normal !important;
+  font-size: calc(14 / 16 * 1rem) !important;
+  line-height: 1.5 !important;
+  font-family: var(--font-family-mono) !important;
+  letter-spacing: 0 !important;
+}
+
+/* DADS tokens.css（global.css に無い変数） */
+:root {
+  --font-weight-400: 400;
+  --font-weight-700: 700;
+  --font-size-14: 0.875rem;
+  --font-size-16: 1rem;
+  --font-size-17: 1.0625rem;
+  --font-size-18: 1.125rem;
+  --font-size-20: 1.25rem;
+  --font-size-22: 1.375rem;
+  --font-size-24: 1.5rem;
+  --font-size-26: 1.625rem;
+  --font-size-28: 1.75rem;
+  --font-size-32: 2rem;
+  --font-size-36: 2.25rem;
+  --font-size-45: 2.8125rem;
+  --font-size-48: 3rem;
+  --font-size-57: 3.5625rem;
+  --font-size-64: 4rem;
+  --line-height-100: 1;
+  --line-height-120: 1.2;
+  --line-height-130: 1.3;
+  --line-height-140: 1.4;
+  --line-height-150: 1.5;
+  --line-height-160: 1.6;
+  --line-height-170: 1.7;
+  --line-height-175: 1.75;
+  --border-radius-4: 0.25rem;
+  --border-radius-6: 0.375rem;
+  --border-radius-8: 0.5rem;
+  --border-radius-12: 0.75rem;
+  --border-radius-16: 1rem;
+  --border-radius-24: 1.5rem;
+  --border-radius-32: 2rem;
+  --border-radius-full: 624.9375rem;
+}
+/* heading/heading.css */
+.dads-heading {
+  color: var(--color-neutral-solid-gray-800);
+  font-family: var(--font-family-sans);
+}
+
+.dads-heading[data-size="64"] {
+  --_shoulder-size: calc(28 / 16 * 1rem);
+  --_shoulder-line-height: 1.5;
+  --_shoulder-letter-spacing: 0.01em;
+  font-weight: bold;
+  font-size: calc(64 / 16 * 1rem);
+  line-height: 1.4;
+  letter-spacing: 0;
+}
+
+.dads-heading[data-size="57"] {
+  --_shoulder-size: calc(24 / 16 * 1rem);
+  --_shoulder-line-height: 1.5;
+  --_shoulder-letter-spacing: 0.02em;
+  font-weight: bold;
+  font-size: calc(57 / 16 * 1rem);
+  line-height: 1.4;
+  letter-spacing: 0;
+}
+
+.dads-heading[data-size="45"] {
+  --_shoulder-size: calc(22 / 16 * 1rem);
+  --_shoulder-line-height: 1.5;
+  --_shoulder-letter-spacing: 0.02em;
+  font-weight: bold;
+  font-size: calc(45 / 16 * 1rem);
+  line-height: 1.4;
+  letter-spacing: 0;
+}
+
+.dads-heading[data-size="36"] {
+  --_shoulder-size: calc(20 / 16 * 1rem);
+  --_shoulder-line-height: 1.5;
+  --_shoulder-letter-spacing: 0.02em;
+  font-weight: bold;
+  font-size: calc(36 / 16 * 1rem);
+  line-height: 1.4;
+  letter-spacing: 0.01em;
+}
+
+.dads-heading[data-size="32"] {
+  --_shoulder-size: calc(18 / 16 * 1rem);
+  --_shoulder-line-height: 1.6;
+  --_shoulder-letter-spacing: 0.02em;
+  font-weight: bold;
+  font-size: calc(32 / 16 * 1rem);
+  line-height: 1.5;
+  letter-spacing: 0.01em;
+}
+
+.dads-heading[data-size="28"] {
+  --_shoulder-size: calc(16 / 16 * 1rem);
+  --_shoulder-line-height: 1.7;
+  --_shoulder-letter-spacing: 0.02em;
+  font-weight: bold;
+  font-size: calc(28 / 16 * 1rem);
+  line-height: 1.5;
+  letter-spacing: 0.01em;
+}
+
+.dads-heading[data-size="24"] {
+  --_shoulder-size: calc(16 / 16 * 1rem);
+  --_shoulder-line-height: 1.7;
+  --_shoulder-letter-spacing: 0.02em;
+  font-weight: bold;
+  font-size: calc(24 / 16 * 1rem);
+  line-height: 1.5;
+  letter-spacing: 0.02em;
+}
+
+.dads-heading[data-size="20"] {
+  --_shoulder-size: calc(16 / 16 * 1rem);
+  --_shoulder-line-height: 1.7;
+  --_shoulder-letter-spacing: 0.02em;
+  font-weight: bold;
+  font-size: calc(20 / 16 * 1rem);
+  line-height: 1.5;
+  letter-spacing: 0.02em;
+}
+
+.dads-heading[data-size="18"] {
+  --_shoulder-size: calc(16 / 16 * 1rem);
+  --_shoulder-line-height: 1.7;
+  --_shoulder-letter-spacing: 0.02em;
+  font-weight: bold;
+  font-size: calc(18 / 16 * 1rem);
+  line-height: 1.6;
+  letter-spacing: 0.02em;
+}
+
+.dads-heading[data-size="16"] {
+  --_shoulder-size: calc(16 / 16 * 1rem);
+  --_shoulder-line-height: 1.7;
+  --_shoulder-letter-spacing: 0.02em;
+  font-weight: bold;
+  font-size: calc(16 / 16 * 1rem);
+  line-height: 1.7;
+  letter-spacing: 0.02em;
+}
+
+.dads-heading[data-chip] {
+  position: relative;
+  padding-left: calc(1em / 3 + 0.5em);
+}
+
+.dads-heading[data-chip]::before {
+  position: absolute;
+  top: 0.2em;
+  bottom: 0.1em;
+  left: 0;
+  width: calc(1em / 3);
+  background-color: var(--color-key-900);
+  content: "";
+}
+
+@supports (top: 1lh) {
+  .dads-heading[data-chip]::before {
+    top: calc(0.5lh - 0.45em);
+    bottom: calc(0.5lh - 0.55em);
+  }
+}
+
+.dads-heading[data-chip]:has(.dads-heading__shoulder)::before {
+  top: calc((var(--_shoulder-size) * (var(--_shoulder-line-height) - 1)) / 2);
+}
+
+@media (forced-colors: active) {
+  .dads-heading[data-chip]::before {
+    background-color: CanvasText;
+  }
+}
+
+.dads-heading[data-rule] {
+  border-bottom: solid var(--color-key-900);
+}
+
+.dads-heading[data-rule="8"] {
+  border-bottom-width: calc(8 / 16 * 1rem);
+  padding-bottom: calc(32 / 16 * 1rem);
+}
+
+.dads-heading[data-rule="6"] {
+  border-bottom-width: calc(6 / 16 * 1rem);
+  padding-bottom: calc(24 / 16 * 1rem);
+}
+
+.dads-heading[data-rule="4"] {
+  border-bottom-width: calc(4 / 16 * 1rem);
+  padding-bottom: calc(16 / 16 * 1rem);
+}
+
+.dads-heading[data-rule="2"] {
+  border-bottom-width: calc(2 / 16 * 1rem);
+  padding-bottom: calc(8 / 16 * 1rem);
+}
+
+.dads-heading__shoulder {
+  margin: 0;
+  font-weight: bold;
+  font-size: var(--_shoulder-size);
+  line-height: var(--_shoulder-line-height);
+  letter-spacing: var(--_shoulder-letter-spacing);
+}
+
+.dads-heading__heading {
+  margin: 0;
+  font: inherit;
+}
+
+.dads-heading__icon {
+  margin-right: calc(0.4em - 0.25em);
+}
+
+.dads-heading__icon::after {
+  content: " ";
+}
+
+.dads-heading__icon-svg {
+  display: inline-block;
+  width: 1.25em;
+  height: 1.25em;
+  vertical-align: -0.25em;
+}
+
+/* list/list.css */
+.dads-list {
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-left: calc(32 / 16 * 1rem);
+  list-style-type: revert;
+}
+
+.dads-list > li {
+  --_spacing: 0;
+  padding-top: var(--_spacing);
+  padding-bottom: var(--_spacing);
+}
+
+.dads-list[data-spacing="4"] > li {
+  --_spacing: calc(4 / 16 * 1rem);
+}
+
+.dads-list[data-spacing="8"] > li {
+  --_spacing: calc(8 / 16 * 1rem);
+}
+
+.dads-list[data-spacing="12"] > li {
+  --_spacing: calc(12 / 16 * 1rem);
+}
+
+.dads-list[data-marker="number"] {
+  padding-left: 0;
+  list-style-type: none;
+}
+
+.dads-list[data-marker="number"] > li {
+  padding-left: calc(32 / 16 * 1rem);
+}
+
+.dads-list[data-marker="number"] > li > a:only-child {
+  margin-left: calc(-32 / 16 * 1rem);
+  padding-left: calc(32 / 16 * 1rem);
+}
+
+.dads-list[data-marker="number"] > li > span:first-child,
+.dads-list[data-marker="number"] > li > a:only-child > span:first-child {
+  margin-left: calc(-32 / 16 * 1rem);
+  display: inline-block;
+  min-width: calc(32 / 16 * 1rem);
+  white-space: nowrap;
+}
+
+.dads-list[data-marker="number"] > li > a:only-child > span:first-child {
+  text-decoration: inherit;
+}
+
+.dads-list .dads-list {
+  margin-top: var(--_spacing);
+  margin-bottom: calc(-1 * var(--_spacing));
+}
+
+/* link/link.css */
+.dads-link:any-link {
+  color: var(--color-primitive-blue-1000);
+  text-decoration: underline;
+  text-decoration-thickness: calc(1 / 16 * 1rem);
+  text-underline-offset: calc(3 / 16 * 1rem);
+}
+
+.dads-link:visited {
+  color: var(--color-primitive-magenta-900);
+}
+
+@media (hover: hover) {
+  .dads-link:hover {
+    color: var(--color-primitive-blue-900);
+    text-decoration-thickness: calc(3 / 16 * 1rem);
+  }
+}
+
+.dads-link:active {
+  color: var(--color-primitive-orange-800);
+  text-decoration-thickness: calc(1 / 16 * 1rem);
+}
+
+.dads-link:focus-visible {
+  outline: calc(4 / 16 * 1rem) solid var(--color-neutral-black);
+  outline-offset: calc(2 / 16 * 1rem);
+  border-radius: calc(4 / 16 * 1rem);
+  background-color: var(--color-primitive-yellow-300);
+  box-shadow: 0 0 0 calc(2 / 16 * 1rem) var(--color-primitive-yellow-300);
+}
+
+.dads-link__icon {
+  display: inline-block;
+  width: calc(16 / 16 * 1rem);
+  height: calc(16 / 16 * 1rem);
+  vertical-align: -0.15em;
+}
+
+/* table/table.css */
+.dads-table {
+  --_border-color: var(--color-neutral-solid-gray-420);
+  --_padding: calc(20 / 16 * 1rem) calc(16 / 16 * 1rem);
+  margin: 0;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  row-gap: calc(16 / 16 * 1rem);
+  color: var(--color-neutral-solid-gray-800);
+  font-weight: normal;
+  font-size: calc(16 / 16 * 1rem);
+  line-height: 1.7;
+  font-family: var(--font-family-sans);
+  letter-spacing: 0.02em;
+}
+
+.dads-table[data-size="dense"] {
+  --_padding: calc(12 / 16 * 1rem) calc(16 / 16 * 1rem);
+  line-height: 1.3;
+}
+
+.dads-table__caption {
+  font-weight: bold;
+  font-size: calc(17 / 16 * 1rem);
+}
+
+.dads-table__table {
+  border-collapse: collapse;
+}
+
+.dads-table__table :is(td, th) {
+  padding: var(--_padding);
+  text-align: left;
+  vertical-align: baseline;
+}
+
+.dads-table__table th {
+  font-weight: bold;
+}
+
+.dads-table__col-header {
+  --_border-color: var(--color-neutral-solid-gray-500);
+  background-color: var(--color-neutral-solid-gray-100);
+  color: var(--color-neutral-solid-gray-900);
+}
+
+.dads-table__row-header {
+  --_border-color: var(--color-neutral-solid-gray-500);
+  background-color: var(--color-neutral-solid-gray-100);
+  color: var(--color-neutral-solid-gray-900);
+}
+
+/* Stripe */
+
+.dads-table[data-row-stripe] {
+  --_border-color: var(--color-neutral-solid-gray-500);
+}
+
+.dads-table[data-row-stripe] tr:nth-child(even) {
+  background-color: var(--color-neutral-solid-gray-50);
+}
+
+/* Hover highlight */
+
+.dads-table[data-row-hover-highlight] {
+  --_border-color: var(--color-neutral-solid-gray-500);
+}
+
+@media (hover: hover) {
+  .dads-table[data-row-hover-highlight] tr:hover {
+    background-color: var(--color-key-50);
+  }
+}
+
+/* With checkbox */
+
+.dads-table[data-selectable] {
+  --_border-color: var(--color-neutral-solid-gray-500);
+}
+
+.dads-table[data-selectable] tr:has(:checked) :where(td, th) {
+  background:
+    linear-gradient(#fff, #fff) top / 100% 1px no-repeat,
+    linear-gradient(90deg, #fff, #fff) left / var(--_gap-x, 0) 100% no-repeat,
+    var(--color-key-100);
+  background-origin: padding-box;
+}
+
+.dads-table [data-border=""] :is(td, th):first-child,
+.dads-table [data-border~="left"] :is(td, th):first-child,
+.dads-table [data-cell-border=""] :is(td, th),
+.dads-table [data-cell-border~="left"] :is(td, th),
+.dads-table [data-cell-border~="right"] :is(td, th) + :is(td, th),
+.dads-table [data-border=""]:is(td, th),
+.dads-table [data-border~="left"]:is(td, th),
+.dads-table [data-border=""] + :is(td, th),
+.dads-table [data-border~="right"] + :is(td, th) {
+  --_gap-x: 1px;
+}
+
+@supports (selector(:has(.x))) {
+  .dads-table td:has(.dads-checkbox:only-child, .dads-radio:only-child),
+  .dads-table th:has(.dads-checkbox:only-child, .dads-radio:only-child) {
+    position: relative;
+    box-sizing: border-box;
+    width: calc(40 / 16 * 1rem);
+    padding: 0;
+  }
+
+  .dads-table td > :is(.dads-checkbox:only-child, .dads-radio:only-child),
+  .dads-table th > :is(.dads-checkbox:only-child, .dads-radio:only-child) {
+    position: absolute;
+    inset: 0;
+    display: grid;
+    justify-content: center;
+    width: auto;
+    padding-top: calc(10 / 16 * 1rem);
+  }
+}
+
+/* Sort and action */
+
+.dads-table__sort-header {
+  --_border-color: var(--color-neutral-solid-gray-500);
+  background-color: var(--color-neutral-solid-gray-100);
+  padding: calc(12 / 16 * 1rem) calc(16 / 16 * 1rem);
+  color: var(--color-neutral-solid-gray-900);
+}
+
+.dads-table[data-size="dense"] .dads-table__sort-header {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.dads-table__sort-inner {
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+  column-gap: calc(4 / 16 * 1rem);
+}
+
+.dads-table__sort-label {
+  display: flex;
+  align-items: start;
+  gap: calc(4 / 16 * 1rem);
+  padding-top: calc(8 / 16 * 1rem);
+  padding-bottom: calc(8 / 16 * 1rem);
+}
+
+.dads-table[data-size="dense"] .dads-table__sort-label {
+  padding-top: calc(11 / 16 * 1rem);
+  padding-bottom: calc(11 / 16 * 1rem);
+}
+
+.dads-table__sort-button {
+  display: inline-flex;
+  align-items: start;
+  column-gap: calc(4 / 16 * 1rem);
+  border: 0;
+  background-color: transparent;
+  padding: 0;
+  color: inherit;
+  text-align: left;
+  font: inherit;
+  letter-spacing: inherit;
+  text-decoration: underline;
+  text-underline-offset: calc(3 / 16 * 1rem);
+}
+
+.dads-table__sort-button:hover {
+  text-decoration-thickness: calc(3 / 16 * 1rem);
+}
+
+.dads-table__sort-button:focus-visible {
+  outline: calc(4 / 16 * 1rem) solid var(--color-neutral-black);
+  outline-offset: calc(2 / 16 * 1rem);
+  border-radius: calc(4 / 16 * 1rem);
+  background-color: var(--color-primitive-yellow-300);
+  box-shadow: 0 0 0 calc(2 / 16 * 1rem) var(--color-primitive-yellow-300);
+}
+
+.dads-table__sort-icon {
+  flex-shrink: 0;
+  padding-top: calc(2 / 16 * 1rem);
+}
+
+.dads-table[data-size="dense"] .dads-table__sort-icon {
+  margin-top: calc(-2 / 16 * 1rem);
+  padding-top: 0;
+}
+
+.dads-table__sort-svg {
+  display: block;
+  width: calc(24 / 16 * 1rem);
+  height: calc(24 / 16 * 1rem);
+}
+
+.dads-table__action {
+  margin-right: calc(-16 / 16 * 1rem);
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  width: calc(44 / 16 * 1rem);
+  height: calc(44 / 16 * 1rem);
+  border-radius: calc(4 / 16 * 1rem);
+  border: 0;
+  background-color: transparent;
+  padding: 0;
+  color: inherit;
+}
+
+.dads-table__action:focus-visible {
+  outline: calc(4 / 16 * 1rem) solid var(--color-neutral-black);
+  outline-offset: calc(2 / 16 * 1rem);
+  border-radius: calc(4 / 16 * 1rem);
+  background-color: var(--color-primitive-yellow-300);
+  box-shadow: 0 0 0 calc(2 / 16 * 1rem) var(--color-primitive-yellow-300);
+}
+
+.dads-table__action-svg {
+  display: block;
+  width: calc(24 / 16 * 1rem);
+  height: calc(24 / 16 * 1rem);
+}
+
+/* Utilities */
+
+.dads-table [data-width="full"] {
+  width: 100%;
+}
+
+.dads-table [data-layout="fixed"] {
+  table-layout: fixed;
+}
+
+.dads-table [data-cell-border=""] :where(td, th) {
+  border: 1px solid var(--_border-color);
+}
+
+.dads-table [data-cell-border~="top"] :where(td, th) {
+  border-top: 1px solid var(--_border-color);
+}
+
+.dads-table [data-cell-border~="right"] :where(td, th) {
+  border-right: 1px solid var(--_border-color);
+}
+
+.dads-table [data-cell-border~="bottom"] :where(td, th) {
+  border-bottom: 1px solid var(--_border-color);
+}
+
+.dads-table [data-cell-border~="left"] :where(td, th) {
+  border-left: 1px solid var(--_border-color);
+}
+
+/* Header cell's black border should take precedence over [data-cell-border] */
+:last-of-type > .dads-table__col-header,
+:last-of-type > .dads-table__sort-header {
+  border-bottom: 1px solid var(--color-neutral-black);
+}
+.dads-table__row-header:last-of-type {
+  border-right: 1px solid var(--color-neutral-black);
+}
+
+.dads-table [data-border=""] {
+  border: 1px solid var(--_border-color);
+}
+
+.dads-table [data-border~="top"] {
+  border-top: 1px solid var(--_border-color);
+}
+
+.dads-table [data-border~="right"] {
+  border-right: 1px solid var(--_border-color);
+}
+
+.dads-table [data-border~="bottom"] {
+  border-bottom: 1px solid var(--_border-color);
+}
+
+.dads-table [data-border~="left"] {
+  border-left: 1px solid var(--_border-color);
+}
+
+.dads-table [data-border="hidden"] {
+  border-style: hidden;
+}
+
+.dads-table [data-border~="top-hidden"] {
+  border-top-style: hidden;
+}
+
+.dads-table [data-border~="right-hidden"] {
+  border-right-style: hidden;
+}
+
+.dads-table [data-border~="bottom-hidden"] {
+  border-bottom-style: hidden;
+}
+
+.dads-table [data-border~="left-hidden"] {
+  border-left-style: hidden;
+}
+
+.dads-table [data-bg="white"] {
+  background-color: var(--color-neutral-white);
+}
+
+.dads-table [data-bg="solid-gray-50"] {
+  --_border-color: var(--color-neutral-solid-gray-500);
+  background-color: var(--color-neutral-solid-gray-50);
+}
+
+.dads-table [data-bg="solid-gray-100"] {
+  --_border-color: var(--color-neutral-solid-gray-500);
+  background-color: var(--color-neutral-solid-gray-100);
+}
+
+.dads-table [data-bg="transparent"] {
+  background-color: transparent;
+}
+
+</style>
+<script type="module">
+// table/scroll-shadow.js
+export class ScrollShadow extends HTMLElement {
+  #abort = null;
+
+  connectedCallback() {
+    this.#abort = new AbortController();
+    this.#setup();
+    this.#setupEventListeners();
+    this.#update();
+  }
+
+  disconnectedCallback() {
+    this.#abort.abort();
+    this.#teardown();
+  }
+
+  #setup() {
+    Object.assign(this.style, {
+      position: "relative",
+      marginRight: "calc(var(--scroll-shadow-padding) * -1)",
+      marginLeft: "calc(var(--scroll-shadow-padding) * -1)",
+      display: "flex",
+      overflowX: "auto",
+      paddingRight: "var(--scroll-shadow-padding)",
+      paddingBottom: "calc(8 / 16 * 1rem)",
+      paddingLeft: "var(--scroll-shadow-padding)",
+    });
+
+    this.tabIndex = 0;
+
+    const commonShadowStyles = `
+      position: sticky;
+      top: 0;
+      bottom: 0;
+      flex-shrink: 0;
+      width: calc(24 / 16 * 1rem);
+      transition: opacity 0.3s ease;
+      opacity: 0;
+      pointer-events: none;`;
+
+    this.insertAdjacentHTML(
+      "afterbegin",
+      `<div class="dads-scroll-shadow__left" style="
+        ${commonShadowStyles}
+        left: calc(var(--scroll-shadow-padding) * -1);
+        margin-right: calc(-24 / 16 * 1rem);
+        background: linear-gradient(to right, rgba(0, 0, 0, 0.4), transparent);
+      "></div>`,
+    );
+
+    this.insertAdjacentHTML(
+      "beforeend",
+      `<div class="dads-scroll-shadow__right" style="
+        ${commonShadowStyles}
+        right: calc(var(--scroll-shadow-padding) * -1);
+        margin-left: calc(-24 / 16 * 1rem);
+        background: linear-gradient(to left, rgba(0, 0, 0, 0.4), transparent);
+      "></div>`,
+    );
+  }
+
+  #teardown() {
+    this.removeAttribute("tabindex");
+    this.querySelector(".dads-scroll-shadow__left")?.remove();
+    this.querySelector(".dads-scroll-shadow__right")?.remove();
+  }
+
+  #setupEventListeners() {
+    const { signal } = this.#abort;
+    this.addEventListener("scroll", () => this.#update(), { signal });
+    window.addEventListener("resize", () => this.#update(), { signal });
+  }
+
+  #update() {
+    if (this.#leftShadow) {
+      this.#leftShadow.style.opacity = this.#hasLeftShadow ? "1" : "0";
+    }
+    if (this.#rightShadow) {
+      this.#rightShadow.style.opacity = this.#hasRightShadow ? "1" : "0";
+    }
+  }
+
+  get #leftShadow() {
+    return this.querySelector(".dads-scroll-shadow__left");
+  }
+
+  get #rightShadow() {
+    return this.querySelector(".dads-scroll-shadow__right");
+  }
+
+  get #hasLeftShadow() {
+    const paddingValue = this.#getPaddingValue();
+    return this.scrollLeft > paddingValue;
+  }
+
+  get #hasRightShadow() {
+    const paddingValue = this.#getPaddingValue();
+    return this.scrollLeft + this.clientWidth < this.scrollWidth - paddingValue;
+  }
+
+  #getPaddingValue() {
+    return resolveVarPx(this, "--scroll-shadow-padding");
+  }
+}
+
+function resolveVarPx(targetEl, varName) {
+  const probe = document.createElement("div");
+  probe.style.cssText = `
+    position:absolute;
+    visibility:hidden;
+    width:var(${varName});
+  `;
+  targetEl.appendChild(probe);
+  const px = parseFloat(getComputedStyle(probe).width);
+  probe.remove();
+  return px;
+}
+
+customElements.define("dads-scroll-shadow", ScrollShadow);
+
+</script>
+<style>
+  body { margin: 0; background: var(--color-neutral-white); color: var(--color-neutral-solid-gray-800); }
+  main { max-width: calc(800 / 16 * 1rem); margin: 0 auto; padding: calc(32 / 16 * 1rem) calc(16 / 16 * 1rem) calc(64 / 16 * 1rem); }
+  @media (min-width: 48rem) { main { padding-left: calc(32 / 16 * 1rem); padding-right: calc(32 / 16 * 1rem); } }
+  section { margin-top: calc(56 / 16 * 1rem); }
+  h2.dads-heading { margin-bottom: calc(16 / 16 * 1rem); }
+  h3.dads-heading { margin-top: calc(32 / 16 * 1rem); margin-bottom: calc(8 / 16 * 1rem); }
+  p, .dads-list, .dads-table, pre { margin-top: calc(16 / 16 * 1rem); }
+  code, pre { font-family: var(--font-family-mono); }
+  pre { background: var(--color-neutral-solid-gray-50); border-radius: var(--border-radius-8); padding: calc(16 / 16 * 1rem); overflow-x: auto; white-space: pre-wrap; }
+  .lead { color: var(--color-neutral-solid-gray-700); }
+  .note { border-left: calc(4 / 16 * 1rem) solid var(--color-neutral-solid-gray-420); padding-left: calc(16 / 16 * 1rem); }
+</style>
+</head>
+<body class="dads-u-std-16N-170">
+<main>
+  <h1 class="dads-heading" data-size="36">digital-agency-design-system の使い方</h1>
+  <p class="lead">Web 画面や HTML の文書を、誰が作っても品質の下限を割らないようにするための Claude のプラグインです。デジタル庁デザインシステム（DADS）を土台に、作る・審査する・直すの3つを手伝います。</p>
+
+  <section aria-labelledby="what">
+    <h2 class="dads-heading" data-size="28" id="what">何ができるか</h2>
+    <dads-scroll-shadow style="--scroll-shadow-padding: calc(16 / 16 * 1rem);">
+    <div class="dads-table">
+      <table class="dads-table__table" style="min-width: calc(560 / 16 * 1rem);">
+        <thead>
+          <tr>
+            <th class="dads-table__col-header" scope="col">役</th>
+            <th class="dads-table__col-header" scope="col">すること</th>
+            <th class="dads-table__col-header" scope="col">使える場所</th>
+          </tr>
+        </thead>
+        <tbody data-cell-border="bottom">
+          <tr>
+            <td>作る</td>
+            <td>DADS の部品で Web 画面・フォーム・マニュアルなどを作る。作り終えたら自動で軽く点検する</td>
+            <td>チャット・Cowork・Claude Code</td>
+          </tr>
+          <tr>
+            <td>審査</td>
+            <td>ページを実際に表示して、アクセシビリティ（JIS X 8341-3・WCAG 2.2 AA）、DADS への準拠、表示、文言を点検する。自分では直さない</td>
+            <td>Cowork・Claude Code</td>
+          </tr>
+          <tr>
+            <td>直す</td>
+            <td>審査の指摘を直し、最後にもう一度審査する</td>
+            <td>Cowork・Claude Code</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    </dads-scroll-shadow>
+    <p>チャットではページを実際に表示できないため、審査と直しは Cowork か Claude Code で頼んでください。PowerPoint の資料は slide-techvan の担当です。</p>
+  </section>
+
+  <section aria-labelledby="install">
+    <h2 class="dads-heading" data-size="28" id="install">入れ方</h2>
+    <h3 class="dads-heading" data-size="20" id="install-desktop">Claude デスクトップアプリ（チャット・Cowork）</h3>
+    <ol class="dads-list" data-marker="number" data-spacing="4">
+      <li><span>1. </span>左下の自分の名前 →「設定」→ 設定の左のメニューの「プラグイン」を開く</li>
+      <li><span>2. </span>右上の「＋ 追加」→「マーケットプレイスを追加」→「リポジトリから追加」</li>
+      <li><span>3. </span>URL に <code>kishi-satoshi/digital-agency-design-system-dist</code> を入れて「同期」</li>
+      <li><span>4. </span>表示された digital-agency-design-system を「インストール」</li>
+    </ol>
+    <h3 class="dads-heading" data-size="20" id="install-code">Claude Code</h3>
+    <pre><code>/plugin marketplace add Kishi-Satoshi/digital-agency-design-system-dist
+/plugin install digital-agency-design-system@digital-agency-design-system-dist</code></pre>
+    <p class="note">以前にこのスキルを zip でアップロードした人や、<code>~/.claude/skills/digital-agency-design-system</code> に入れていた人は、先にそちらを外してください。同じ名前のスキルが2つあると、どちらが使われたか分からなくなります。</p>
+  </section>
+
+  <section aria-labelledby="use">
+    <h2 class="dads-heading" data-size="28" id="use">使い方</h2>
+    <p>コマンドは要りません。普通に頼むだけで使われます。DADS やデジタル庁の名前を出す必要もありません。</p>
+    <h3 class="dads-heading" data-size="20" id="use-make">作る</h3>
+    <pre><code>社内向けの備品申請フォームを、1 ファイルの HTML で作って。</code></pre>
+    <p>作り終えると自動で軽く点検し、大事な問題が残っていれば上位3件だけ一言添えます。</p>
+    <h3 class="dads-heading" data-size="20" id="use-review">審査する</h3>
+    <pre><code>このページを審査して。https://www.example.co.jp/</code></pre>
+    <p>指摘は番号付きで返り、記録は作業フォルダの <code>.dads-review/日時-対象名/</code> に残ります（指摘一覧 <code>findings.md</code>、スクショ、道具の記録）。翌日以降も番号で直しを頼めます。</p>
+    <h3 class="dads-heading" data-size="20" id="use-fix">直す</h3>
+    <pre><code>さっきの審査の指摘 1 と 3 を直して。</code></pre>
+    <p>Git で管理しているフォルダでは別ブランチで直し、push や PR の作成の前に確認します。Git で管理していないファイルは、元のファイルを残して <code>名前.dads-fixed.html</code> に保存します。</p>
+    <h3 class="dads-heading" data-size="20" id="use-report">報告書にする</h3>
+    <pre><code>この審査結果を報告書にして。</code></pre>
+    <p>提出用の報告書を DADS のデザインの HTML で作ります。報告書は事前点検であり、JIS X 8341-3 への適合を表明するものではありません。</p>
+  </section>
+
+  <section aria-labelledby="severity">
+    <h2 class="dads-heading" data-size="28" id="severity">指摘の重大度</h2>
+    <dads-scroll-shadow style="--scroll-shadow-padding: calc(16 / 16 * 1rem);">
+    <div class="dads-table">
+      <table class="dads-table__table" style="min-width: calc(560 / 16 * 1rem);">
+        <thead>
+          <tr>
+            <th class="dads-table__col-header" scope="col">重大度</th>
+            <th class="dads-table__col-header" scope="col">決め方</th>
+            <th class="dads-table__col-header" scope="col">直す役の動き</th>
+          </tr>
+        </thead>
+        <tbody data-cell-border="bottom">
+          <tr><td>致命的</td><td>WCAG のレベル A の違反（使えない人が出る）</td><td>確認せずに直す</td></tr>
+          <tr><td>重要</td><td>WCAG のレベル AA の違反</td><td>確認せずに直す</td></tr>
+          <tr><td>軽微</td><td>それ以外（見た目の細部、文言の平易さなど）</td><td>確認してから直す</td></tr>
+          <tr><td>DADS の印</td><td>重大度とは別に、DADS から外れているもの（トークン外の色、独自の部品など）</td><td>確認してから直す（作ったばかりのページは確認しない）</td></tr>
+        </tbody>
+      </table>
+    </div>
+    </dads-scroll-shadow>
+  </section>
+
+  <section aria-labelledby="protect">
+    <h2 class="dads-heading" data-size="28" id="protect">守るものを伝える（DADS-PROTECT.md）</h2>
+    <p>顧客のロゴやブランド色、テンプレートなど、DADS より優先して守るものがあるプロジェクトでは、プロジェクトの直下に <code>DADS-PROTECT.md</code> を置いてください。書かれたものは、変える前に必ず確認されます。</p>
+    <pre><code># 守るもの
+
+## 守るファイル・フォルダ
+- templates/master.pptx
+- src/components/customer/**
+
+## ブランド色
+- #0F2350（顧客のコーポレートカラー）
+
+## 顧客の基準
+- docs/customer-guideline.pdf
+
+## メモ
+- ロゴの余白は変えない</code></pre>
+    <p>ファイルが無くても、ロゴやブランド色らしきものを見つけたときは、直す前に確認されます。</p>
+  </section>
+
+  <section aria-labelledby="browser">
+    <h2 class="dads-heading" data-size="28" id="browser">審査に使うブラウザ</h2>
+    <p>審査ではページを実際に表示するため、Playwright と Chromium（合わせて約 200MB）を使います。Cowork や Claude Code のクラウドでは自動で入ります。自分の PC で初めて審査するときは、入れてよいかを聞かれます。断ると、その審査は「未点検」になります。</p>
+  </section>
+
+  <section aria-labelledby="update">
+    <h2 class="dads-heading" data-size="28" id="update">更新を受け取る</h2>
+    <p>プラグインの画面（左下の名前 →「設定」→「プラグイン」）の「＋ 追加」→「マーケットプレイスを管理」で digital-agency-design-system-dist を同期し、「自分のもの」の digital-agency-design-system を更新します。新しく始めた会話から反映されます。</p>
+  </section>
+
+  <section aria-labelledby="about">
+    <h2 class="dads-heading" data-size="28" id="about">このプラグインについて</h2>
+    <ul class="dads-list" data-spacing="4">
+      <li>テクバン社内での利用を目的としたものです。</li>
+      <li>デジタル庁デザインシステムを個人がプラグインにしたもので、デジタル庁の公式配布物ではありません。上流はいずれも MIT ライセンス（著作権者：デジタル庁）です。</li>
+      <li>審査は事前点検であり、JIS X 8341-3 への適合を表明するものではありません。</li>
+    </ul>
+  </section>
+</main>
+</body>
+</html>
