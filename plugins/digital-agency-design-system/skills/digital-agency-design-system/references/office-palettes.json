@@ -1,0 +1,7 @@
+{
+  "_説明": "PowerPoint の審査で、テーマの色と同じに扱う（S10 で指摘しない）色の一覧。手で管理する（上流の自動更新の対象外）。slide-techvan の色を変えたら、styles/techvan/theme.json の colors から作り直す。",
+  "slide-techvan": {
+    "source": "Kishi-Satoshi/slide-techvan plugins/slide-techvan/skills/slide-techvan/styles/techvan/theme.json（v0.6.5 の colors）",
+    "colors": ["163E64", "194671", "1F4E79", "2E6094", "2E75B6", "44546A", "4A74A1", "5B84B1", "5F6F84", "8496AB", "9AA8B8", "A33A3A", "A9B8C9", "B9CDE2", "C9D6E5", "C9DCF2", "D8E2EE", "DCE8F5", "E0262D", "EFF4FA", "FFFFFF"]
+  }
+}

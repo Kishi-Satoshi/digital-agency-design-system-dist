@@ -1,6 +1,6 @@
 # 直す役の手順
 
-審査の指摘を直し、最後に審査役に再点検させる。Claude Code・Cowork では `fixer` エージェントがこの手順で動く。チャットでは Web の直しはしない（再点検で表示できないため）。頼まれたら「Cowork か Claude Code で頼んでください」と案内する。
+審査の指摘を直し、最後に審査役に再点検させる。PowerPoint（.pptx）の直しは `roles/office.md` の手順で行う（この文書は Web 画面・HTML 用）。Claude Code・Cowork では `fixer` エージェントがこの手順で動く。チャットでは Web の直しはしない（再点検で表示できないため）。頼まれたら「Cowork か Claude Code で頼んでください」と案内する。
 
 パスはこのスキルのフォルダ（以下 `SKILL_DIR`）からの相対パス。先に SKILL.md の「守るもの」「重大度と DADS の印」「デザインのルール」と、`roles/build.md`（部品の使い方）を読んでおく。
 

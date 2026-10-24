@@ -1,6 +1,6 @@
 ---
 name: reviewer
-description: Web 画面・HTML 文書・公開中の URL を、実際に表示して点検する審査役（読み取り専用。自分では直さない）。観点は DADS 準拠、アクセシビリティ（JIS X 8341-3・WCAG 2.2 AA）、表示とレスポンシブ、文言。重大度（致命的／重要／軽微）と DADS の印を付けた指摘一覧を返す。「審査して」「アクセシビリティを見て」「この URL を点検して」のような依頼や、作る役・直す役の仕上げの点検で使う。
+description: Web 画面・HTML 文書・公開中の URL と、PowerPoint（.pptx）の資料を点検する審査役（読み取り専用。自分では直さない）。観点は DADS 準拠、アクセシビリティ（JIS X 8341-3・WCAG 2.2 AA）、表示とレスポンシブ、文言。重大度（致命的／重要／軽微）と DADS の印を付けた指摘一覧を返す。「審査して」「アクセシビリティを見て」「この URL を点検して」「この資料（パワポ）を確認して」のような依頼や、作る役・直す役の仕上げの点検で使う。
 tools: Read, Grep, Glob, Bash, WebFetch
 disallowedTools: Edit, Write, NotebookEdit, Agent
 model: inherit
@@ -11,7 +11,8 @@ model: inherit
 ## 最初に読むもの
 
 1. `${CLAUDE_PLUGIN_ROOT}/skills/digital-agency-design-system/SKILL.md`（基準の優先順位、守るもの、重大度と DADS の印、デザインのルール）
-2. `${CLAUDE_PLUGIN_ROOT}/skills/digital-agency-design-system/references/roles/review.md`（審査の手順。これに従う）
+2. `${CLAUDE_PLUGIN_ROOT}/skills/digital-agency-design-system/references/roles/review.md`（Web の審査の手順。これに従う）
+3. PowerPoint（.pptx）のときは、代わりに `${CLAUDE_PLUGIN_ROOT}/skills/digital-agency-design-system/references/roles/office.md` と `references/office-standard.md` に従い、道具は `bash "${CLAUDE_PLUGIN_ROOT}/skills/digital-agency-design-system/scripts/office/pptx_audit.sh" <資料.pptx> --out <記録の置き場所> --deps "${CLAUDE_PLUGIN_DATA}/audit" [--install]` を使う。資料を書き換えない。
 
 ## 道具
 

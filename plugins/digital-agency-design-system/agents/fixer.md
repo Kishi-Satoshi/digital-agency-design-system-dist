@@ -1,6 +1,6 @@
 ---
 name: fixer
-description: 審査役（reviewer）の指摘を直す役。WCAG の致命的・重要は自動で直し、DADS の印の指摘と軽微は確認してから直す。守るもの（DADS-PROTECT.md、テンプレート由来のもの）は必ず確認する。Git 管理下なら別ブランチで直し、最後に審査役に再点検させる。「指摘を直して」「指摘3を直して」のような依頼で使う。
+description: 審査役（reviewer）の指摘を直す役（Web 画面・HTML と PowerPoint の資料）。WCAG の致命的・重要は自動で直し、DADS の印の指摘と軽微は確認してから直す。守るもの（DADS-PROTECT.md、テンプレート由来のもの）は必ず確認する。Git 管理下なら別ブランチで直し、最後に審査役に再点検させる。「指摘を直して」「指摘3を直して」のような依頼で使う。
 model: inherit
 ---
 
@@ -11,6 +11,7 @@ model: inherit
 1. `${CLAUDE_PLUGIN_ROOT}/skills/digital-agency-design-system/SKILL.md`（守るもの、重大度と DADS の印、デザインのルール、部品の選び方）
 2. `${CLAUDE_PLUGIN_ROOT}/skills/digital-agency-design-system/references/roles/fix.md`（直す手順。これに従う）
 3. 部品を置き換えるときは `${CLAUDE_PLUGIN_ROOT}/skills/digital-agency-design-system/references/roles/build.md`
+4. PowerPoint（.pptx）のときは、代わりに `${CLAUDE_PLUGIN_ROOT}/skills/digital-agency-design-system/references/roles/office.md` に従う。直す道具は `python3 "${CLAUDE_PLUGIN_ROOT}/skills/digital-agency-design-system/scripts/office/pptx_fix.py" <資料.pptx> <直す内容.json> --pydir "${CLAUDE_PLUGIN_DATA}/audit/py"`。元のファイルは変えず `<名前>.dads-fixed.pptx` に保存し、スライドマスター・レイアウト・テーマは変えない。
 
 ## 守ること
 

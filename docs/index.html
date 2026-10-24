@@ -1462,7 +1462,7 @@ customElements.define("dads-scroll-shadow", ScrollShadow);
 <body class="dads-u-std-16N-170">
 <main>
   <h1 class="dads-heading" data-size="36">digital-agency-design-system の使い方</h1>
-  <p class="lead">Web 画面や HTML の文書を、誰が作っても品質の下限を割らないようにするための Claude のプラグインです。デジタル庁デザインシステム（DADS）を土台に、作る・審査する・直すの3つを手伝います。</p>
+  <p class="lead">Web 画面や HTML の文書、PowerPoint の資料を、誰が作っても品質の下限を割らないようにするための Claude のプラグインです。デジタル庁デザインシステム（DADS）を土台に、作る・審査する・直すの3つを手伝います。</p>
 
   <section aria-labelledby="what">
     <h2 class="dads-heading" data-size="28" id="what">何ができるか</h2>
@@ -1492,11 +1492,16 @@ customElements.define("dads-scroll-shadow", ScrollShadow);
             <td>審査の指摘を直し、最後にもう一度審査する</td>
             <td>Cowork・Claude Code</td>
           </tr>
+          <tr>
+            <td>PowerPoint の審査・直し</td>
+            <td>資料（.pptx）のタイトル・読み上げ順・代替テキスト・文字の大きさ・コントラストなどを点検し、直したものを別名で保存する。スライドマスターやレイアウトは変えない</td>
+            <td>チャット・Cowork・Claude Code</td>
+          </tr>
         </tbody>
       </table>
     </div>
     </dads-scroll-shadow>
-    <p>チャットではページを実際に表示できないため、審査と直しは Cowork か Claude Code で頼んでください。PowerPoint の資料は slide-techvan の担当です。</p>
+    <p>チャットではページを実際に表示できないため、Web の審査と直しは Cowork か Claude Code で頼んでください。PowerPoint の資料を作るのは slide-techvan の担当で、作った資料の確認と直しはこのプラグインが行います。</p>
   </section>
 
   <section aria-labelledby="install">
@@ -1552,6 +1557,13 @@ customElements.define("dads-scroll-shadow", ScrollShadow);
       </table>
     </div>
     </dads-scroll-shadow>
+  </section>
+
+  <section aria-labelledby="pptx">
+    <h2 class="dads-heading" data-size="28" id="pptx">PowerPoint の資料を確認する</h2>
+    <pre><code>この 提案書.pptx を確認して、直せるところは直して。</code></pre>
+    <p>テクバン独自の Office 基準（スライド編・初版）で点検します。直したものは <code>提案書.dads-fixed.pptx</code> に保存し、元のファイルは変えません。スライドマスター・レイアウト・テーマには手を付けず、テンプレートに書かれたフッターなどは指摘から外します。</p>
+    <p>画像の意味やリンクの行き先など、推測で直すと誤りになるものは、直す前に質問します。顧客のブランド色を使い続ける資料では、<code>DADS-PROTECT.md</code> の「ブランド色」に書いておくと、その色は指摘されません。</p>
   </section>
 
   <section aria-labelledby="protect">
